@@ -576,7 +576,7 @@ async function pushKeyToCloud(keyItem){
 
         const exists = keys.find(k => k.key === keyItem.key);
         if(exists){
-            setSyncStatus('⚠️ Key đã tồn tại trên Cloud (hiếm gặp)', 'err');
+            setSyncStatus('⚠️ Key đã tồn tại ', 'err');
             return { ok: false, duplicate: true };
         }
 
@@ -838,7 +838,7 @@ function showClaimedKey(key, anchorTs){
         + '<div class="sub">✓ HSD: ' + fmtDate(keyExpiresAt)
         + ' (còn ' + fmtRemain(keyExpiresAt) + ')</div>';
 
-    setSyncStatus('✓ Key đã được đồng bộ — Admin có thể quản lý', 'ok');
+    setSyncStatus('✓ Key đã được tạo ', 'ok');
 
     // Countdown đến lúc tạo key mới
     const cdLabel = $('cdLabel');
